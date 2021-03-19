@@ -1,0 +1,13 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_urls static %}
+
+{% block extrahead %}
+    {{block.super}}
+    <link rel="stylesheet" href="{% static 'css/admin_base.css' %}">
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/admin_base.js' %}"></script>
+{% endblock %}
+
+{% block branding %}
+    <h1 id="site-name"><a href="{% url 'admin:index' %}"> Multi Tenant </a></h1>
+{% endblock %}
