@@ -14,17 +14,12 @@ class Sura(models.Model):
     class Meta:
         ordering = ('id',)
 
-    def save(self, *args, **kwargs):
-        return
-
-    def delete(self, *args, **kwargs):
-        return
-
 
 class Aya(models.Model):
-    sura = models.ForeignKey(Sura, on_delete=models.RESTRICT)
+    sura = models.ForeignKey(Sura, on_delete=models.RESTRICT, related_name='ayas')
     aya = models.PositiveIntegerField()
     arabic = models.CharField(max_length=4095)
+    plain = models.CharField(max_length=4095)
     ur_maududi = models.CharField(max_length=4095)
     en_maududi = models.CharField(max_length=4095)
 
@@ -33,10 +28,3 @@ class Aya(models.Model):
 
     class Meta:
         ordering = ('id',)
-
-    def save(self, *args, **kwargs):
-        return
-
-    def delete(self, *args, **kwargs):
-        return
-

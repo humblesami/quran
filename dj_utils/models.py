@@ -36,3 +36,8 @@ class DefaultModel(models.Model):
 
     class Meta:
         abstract = True
+
+
+class SystemConfig(DefaultModel):
+    name = models.CharField(max_length=127)
+    var_value = models.CharField(max_length=255)

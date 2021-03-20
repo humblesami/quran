@@ -1,0 +1,10 @@
+<div class="search-container">
+    <form action="/translations/search">
+        {% if search_kw %}
+            <input name="kw" value="{{search_kw}}">
+        {% else %}
+            <input name="kw">
+        {% endif %}
+        <button type="submit">Search</button>
+    </form>
+</div>

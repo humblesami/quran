@@ -1,0 +1,29 @@
+<div>
+    {% include 'search_quran.html' %}
+    <a href="/translations/sura">Main Page</a>
+    <style>
+        .sura-items .aya{
+            padding:10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .sura-items .aya >div
+        {
+            padding: 5px 0;
+        }
+        .rtl{
+            text-align: right;
+        }
+    </style>
+
+    <div class="sura-items">
+        {% for aya in ayas %}
+            <div class="aya">
+                <div class="rtl">{{aya.sura.name}} - {{aya.aya}} - {{aya.arabic}}</div>
+                <div class="rtl">{{aya.plain}}</div>
+                <div class="rtl">{{aya.ur_maududi}}</div>
+                <div class="ltr">{{aya.en_maududi}}</div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
